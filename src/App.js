@@ -6,7 +6,10 @@ function App() {
   const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch(`https://hnzn8gowdk.execute-api.us-east-1.amazonaws.com/IntegrationTesting`)
+        fetch(`https://hnzn8gowdk.execute-api.us-east-1.amazonaws.com/IntegrationTesting`, {method: 'GET',
+	      headers: {
+	        accept: 'application/json',
+	      })
         .then((response) => {
                 return response.json()
         })
