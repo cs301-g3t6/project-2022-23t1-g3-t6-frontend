@@ -11,11 +11,11 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-           aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ secrets.AWS_REGION }}
         - name: Build React App
-           run: npm install && npm run build
+          run: npm install && npm run build
         - name: Deploy app build to S3 bucket
-           run: aws s3 sync ./build/ s3://project-2022-23t1-g1-t6-s3 --delete
+          run: aws s3 sync ./build/ s3://project-2022-23t1-g1-t6-s3 --delete
